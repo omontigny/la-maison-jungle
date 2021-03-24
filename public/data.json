@@ -1,0 +1,28 @@
+[
+      {
+        "id": "local-UO1",
+        "name": "U/O1",
+        "max": 70,
+        "current": 20,
+        "unit": "",
+        "indicator": ""
+      },
+      {
+        "id": "local-BUDGET1",
+        "name": "Budget1",
+        "max": 60,
+        "current": 40,
+        "unit": "k€",
+        "indicator": ""
+      },
+      {
+        "id": "local-PROJET1",
+        "name": "Fin Projet1",
+        "max": 100 ,
+        "current": 50,
+        "unit": "",
+        "startDate": "15/01/2021",
+        "endDate": "30/09/2021",
+        "indicator": ""
+      }
+]

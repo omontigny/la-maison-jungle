@@ -1,0 +1,61 @@
+.bgrm-div-style {
+    text-align: center;
+    //border: solid 1px black;
+    margin-bottom: 50px
+}
+
+.brgm-progress-bar-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    //margin-left: 30px;
+}
+
+.brgm-progress-item-background {
+    display: flex;
+    height: 25;
+    width: 100%;
+    border-radius: 50px;
+    //margin: 10px;
+    padding-right: 10px;
+    text-align: right;
+    color: blue;
+    margin-bottom: 10px;
+}
+
+.brgm-progress-item-background-labels {
+    position: relative;
+    top:0;
+    bottom:0;
+    right:0;
+    font-size: 12px;
+    //padding-left: 30vw;
+    text-align: right;
+}
+
+.brgm-progress-item-foreground {
+    height: 100%;
+    border-radius: inherit;
+    text-align: right;
+}
+
+.brgm-progress-item-name {
+    position: relative;
+    top:0;
+    bottom:0;
+    //left: -98%;
+    font-size: 12px;
+    text-align: left;
+    //padding-right: 85%;
+    //padding-left: 5px;
+    color: white;
+}
+
+.brgm-progress-item-pourcent {
+    font-size: 12px;
+    padding-right: 5px ;
+    color: white;
+    font-weight: bold;
+    //text-align: right;
+}
