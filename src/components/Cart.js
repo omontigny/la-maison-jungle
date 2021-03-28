@@ -1,58 +1,58 @@
 import '../styles/Cart.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 /*const Plant = (name,price) => {
     return name + " : " + price + "€";
 }*/
 
-function Cart({cart, updateCart} ) {
-    //const monsteraPrice = 8
-
-    //const [] = useState(0)
-
+function Cart({ cart, updateCart}) {
     const [isOpen, setIsOpen] = useState(true)
-    const total= cart.reduce(
-        (acc,plantType) => acc + plantType.amount * plantType.price, 0
-    )
-        return isOpen ? (
+    //const [activeCategory, setActiveCategory] = useState('')
+
+    const total = cart.reduce(
+        (acc, plantType) => acc + plantType.amount * plantType.price,
+            0
+        )
+
+useEffect(() => {
+    document.title = `LMJ: ${total}€ d'achats`
+}, [total])
+
+    return isOpen ? (
         <div className='lmj-cart'>
-            <button onClick={() => setIsOpen(false)}>Fermer</button>
-            <h2>Panier</h2>
-            <ul>
-            {cart.map(({ name,price,amount}, index) => (
-               <li> <div key={(`${name}-${index}`)}>
-
-                   {amount} x {name} ( {price}€ )
-                </div></li>
-            ))}
-            </ul>
-
-            <h3>Total : {total}€</h3>
-                <button onClick={() => updateCart(0)}> Vider </button>
-
+            <button
+                className='lmj-cart-toggle-button'
+                onClick={() => setIsOpen(false)}
+            >
+                Fermer
+            </button>
+            {cart.length > 0 ? (
+                <div>
+                    <h2>Panier</h2>
+                    <ul>
+                        {cart.map(({ name, price, amount }, index) => (
+                            <div key={`${name}-${index}`}>
+                                    {name} {price}€ x {amount}
+                            </div>
+                        ))}
+                    </ul>
+                    <h3>Total :{total}€</h3>
+                    <button onClick={() => updateCart([])}>Vider le panier</button>
+                </div>
+            ) : (
+                <div>Votre panier est vide</div>
+            )}
         </div>
     ) : (
-
         <div className='lmj-cart-closed'>
-			<button
-				className='lmj-cart-toggle-button'
-				onClick={() => setIsOpen(true)}
-			>
-				Ouvrir le Panier
-			</button>
-		</div>
+            <button
+                className='lmj-cart-toggle-button'
+                onClick={() => setIsOpen(true)}
+            >
+                Ouvrir le Panier
+            </button>
+        </div>
     )
-
-           /*
-            <div className='lmj-cart'>
-                <h2>Panier</h2>
-                <ul>
-                    <li>{monstera}</li>
-                    <li>{ivy}</li>
-                    <li>{flower}</li>
-                </ul>
-                <p>Prix total: { totalPrice } €</p></div> )*/
-
 }
 
 export default Cart

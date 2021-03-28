@@ -2,6 +2,8 @@ import CareScale from './CareScale'
 import '../styles/PlantItem.css'
 
 
+
+
 function PlantItem({ id, cover, name, price, water, light }) {
 return (
     <li key={id} className='lmj-plant-item' onClick={handleClick} >
@@ -15,13 +17,13 @@ return (
     )
 }
 
-/*function handleClick(plantName) {
+function handleClick(plantName) {
 	alert(`Vous voulez acheter 1 ${plantName} ? Très bon choix  🌱✨`)
-    console.log('✨ Ceci est un clic ✨')
-}*/
-
-function handleClick(e) {
-    console.log('✨ Ceci est mon event :', e)
+    //console.log('✨ Ceci est un clic ✨')
 }
+
+/*function handleClick(e) {
+    console.log('✨ Ceci est mon event :', e)
+}*/
 
 export default PlantItem

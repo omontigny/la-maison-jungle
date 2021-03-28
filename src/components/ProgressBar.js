@@ -23,7 +23,7 @@ function ProgressBar() {
 
   const [data3,setData]=useState([]);
   const [colors,setColors]=useState([]);
-  const url='https://itr.freeboxos.fr/data.json';
+  //const url='https://itr.freeboxos.fr/data.json';
   //const url='https://xxxxx/data.json';
 
 
@@ -44,8 +44,8 @@ function ProgressBar() {
       });
   }
   useEffect(()=>{
-    getData(`${url}`)
-    //getData('data.json')
+    //getData(`${url}`)
+    getData('data.json')
   },[])
 
   //getData('data.json');
